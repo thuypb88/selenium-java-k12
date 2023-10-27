@@ -8,7 +8,17 @@ public class SortArray {
         System.out.println("Input: "
                 + Arrays.toString(intArr));
 
-        Arrays.sort(intArr);
+        for (int i = 0; i < intArr.length - 1; i++) {
+            for (int j = 0; j < intArr.length - i - 1; j++) {
+                if (intArr[j] > intArr[j + 1]) {
+                    int temp = intArr[j];
+                    intArr[j] = intArr[j + 1];
+                    intArr[j + 1] = temp;
+                }
+            }
+        }
+
+//        Arrays.sort(intArr);
         System.out.println("Expected output: "
                 + Arrays.toString(intArr));
 //        System.out.print("Sorted Array: ");
